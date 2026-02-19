@@ -50,6 +50,7 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 
 #### 1. Lockscreen Styler (Start Menu Fork)
 > Currently only on the left side.
+
 [📜 Config](./Windhawk/Lockscreen.txt)
 
 #### 2. Windows Notification Placement
