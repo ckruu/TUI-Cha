@@ -63,7 +63,7 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 [📜 Config](./Windhawk/Start.txt)
 
 #### 5. Windows 11 Taskbar Styler
-> This will make your taskbar completely invicible, but it's still clickable.
+> This will make your taskbar completely invisible, but it's still clickable.
 
 [📜 Config](./Windhawk/Taskbar.txt)
 
