@@ -37,15 +37,15 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 
 ## Windhawk Mods
 <p>
-<img src="./Screenshots/Windhawk1.png" alt="Mod Preview 1" width="100%/> 
+    <img src="./Screenshots/Windhawk1.png" alt="Mod Preview 1" width="100%/> 
 </p>
 
 <p>
-<img src="./Screenshots/Windhawk2.png" alt="TUI-Cha Lockscreen" width="100%/>
+    <img src="./Screenshots/Windhawk2.png" alt="TUI-Cha Lockscreen" width="100%/>
 </p>
 
 <p>
-<img src="./Screenshots/Windhawk3.png" alt="Mod Preview 2" width="100%/>
+    <img src="./Screenshots/Windhawk3.png" alt="Mod Preview 2" width="100%/>
 </p>
 
 #### 1. Lockscreen Styler (Start Menu Fork)
@@ -55,18 +55,22 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 
 #### 2. Windows Notification Placement
 > Will mess up when used in diffrent DPI and resolution.
+
 [📜 Config](./Windhawk/NPlacement.txt)
 
 #### 3. Windows 11 Taskbar Styler
-> This will make your taskbar completely invisible, but it's still clickable
+> This will make your taskbar completely invisible, but it's still clickable.
+
 [📜 Config](./Windhawk/Taskbar.txt)
 
 #### 4. Windows 11 Start Menu Styler
 > This will make your start menu and search menu invisible, and you cant use it.
+
 [📜 Config](./Windhawk/Start.txt)
 
 #### 5. Windows 11 Taskbar Styler
-> This will make your taskbar completely invicible, but it's still clickable
+> This will make your taskbar completely invicible, but it's still clickable.
+
 [📜 Config](./Windhawk/Taskbar.txt)
 
 #### 6. Other Mods with no or minimal configurations
@@ -86,19 +90,25 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 
 ## Window Manager
 
-<img src="./Screenshots/WM1.png" alt="WM Preview 1" width="100%/>
+<p>
+    <img src="./Screenshots/WM1.png" alt="WM Preview 1" width="100%/>
+</p>
 
 Get [GlazeWM](https://github.com/glzr-io/glazewm) • [Config](./Desktop/GlazeWM/config.yaml)
 
 ## YASB
 
-<img src="./Screenshots/YASB1.png" alt="YASB Preview 1" width="100%/>
+<p>
+    <img src="./Screenshots/YASB1.png" alt="YASB Preview 1" width="100%/>
+</p>
 
 Get [YASB](https://github.com/amnweb/yasb) • [Config](./Desktop/YASB/config.yaml) • [Styles](./Desktop/YASB/styles.css)
 
 ## Third-party Apps
 
+<p>
 <img src="./Screenshots/TPA1.png" alt="Third-party Apps Preview 1" width="100%/>
+</p>
 
 #### 1. Vesktop (Discord)
 A custom modification of [System24](https://github.com/refact0r/system24) theme.
@@ -119,7 +129,10 @@ Used [Rectify11](https://rectify11.net/home) to make Windows 11 more cconsistent
 
 ## Stylus
 
+<p>
 <img src="./Screenshots/STYLUS1.png" alt="Stylus Preview 1" width="100%/>
+</p>
+
 > This is a work in progress, some elements may appear unstyled or broken in diffrent scenarios, It also weirdly causes some website to perform poorly. Use at your own risk.
 
 #### TUI-YouTube
