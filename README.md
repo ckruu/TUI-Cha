@@ -90,9 +90,9 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 
 ## Window Manager
 
-<p>
-    <img src="./Screenshots/WM1.png" alt="WM Preview 1" width="100%/>
-</p>
+    <p>
+        <img src="./Screenshots/WM1.png" alt="WM Preview 1" width="100%/>
+    </p>
 
 Get [GlazeWM](https://github.com/glzr-io/glazewm) • [Config](./Desktop/GlazeWM/config.yaml)
 
