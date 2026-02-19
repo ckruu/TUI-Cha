@@ -1,19 +1,19 @@
 <div align="center">
 
-    <br>
-    <img src="./resources/assets/logo.svg" width="230" alt="TUI-Cha Banner" />
-    <br>
+<br>
+<img src="./resources/assets/logo.svg" width="230" alt="TUI-Cha Banner" />
+<br>
 
-    TUI Version of [NodoCha](link to original repo)
-    > Please note this mostly is still work in progress, expect some modifications in the future.
+TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
+> Please note this mostly is still work in progress, expect some modifications in the future.
 
 # TUI-Cha
 
-[Windhawk Mods](dir to windhawk) •
-[WM](Link to wm) •
-[YASB](link to yasb) •
-[Third-party Apps](link to third party theme) •
-[Stylus](link to stylus)
+[Windhawk Mods](google.com) •
+[WM](google.com) •
+[YASB](google.com) •
+[Third-party Apps](google.com) •
+[Stylus](google.com)
 
 </div>
 
