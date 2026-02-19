@@ -1,5 +1,4 @@
 <div align="center">
-
 <br>
 <img src="./Resources/Banner/Banner.png" width="600" alt="TUI-Cha Banner" />
 <br>
@@ -35,3 +34,11 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 | Telegram (WIP)            | Google (Planned)           |
 | Zen Browser (Wireframe)   | WhatsApp (Planned)         |
 
+## Windhawk Mods
+### Lockscreen Styler (Start Menu Fork)
+ Preview
+<img src="./Screenshots/Lockscreen.png" width="600" alt="TUI-Cha Lockscreen" />
+
+ [Mod Code](./Windhawk/Lockscreen.txt)
+
+ ###
