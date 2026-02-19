@@ -1,11 +1,11 @@
 <div align="center">
 
 <br>
-<img src="./resources/assets/logo.svg" width="230" alt="TUI-Cha Banner" />
+<img src="./resources/banner/banner.png" width="230" alt="TUI-Cha Banner" />
 <br>
 
 TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
-> Please note this mostly is still work in progress, expect some modifications in the future.
+> Please note this mostly is still work in progress, expect some modifications in the future, and some unstable feature/configurations.
 
 # TUI-Cha
 
