@@ -3,11 +3,11 @@
 <img src="./Resources/Banner/Banner.png" width="600" alt="TUI-Cha Banner" />
 <br>
 
-TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
-> Please note this mostly is still work in progress, expect some modifications in the future, and some unstable feature/configurations.
-> This setup was only tested on 1920 x 1080 monitor with 100% Scaling, expect things to break if you're planning on using this setup on another screen resolution or scaling.
-
 # TUI-Cha
+
+TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
+> Please note this mostly is still work in progress, expect some modifications in the future.
+> This setup was only tested on 1920 x 1080 monitor with 100% Scaling, expect things to break if you're planning on using this setup on another screen resolution or scaling.
 
 [Windhawk Mods](google.com) •
 [WM](google.com) •
