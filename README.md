@@ -133,12 +133,12 @@ Use Stylus • [🌐 Chromium-based Browsers](https://chromewebstore.google.com/
 > This is a work in progress, some elements may appear unstyled or broken in diffrent scenarios, It also weirdly causes some website to perform poorly. Use at your own risk.
 
 #### TUI-YouTube
-> Has some unfinished pages and elements, and would lag or freeze sometimes, at certain resolution/browser size.
+> Has some unfinished pages and elements, and would lag or freeze sometimes at a certain resolution/browser size.
 
 [🎨 TUI Tube](./Stylus/TUITube.txt)
 
 #### Tui-Monochrome Music
-> Has some dublicate styling applied, and some newly added feature isnt styled yet.
+> Has some duplicate styling applied, and some newly added feature isnt styled yet.
 
 [🎨 Monochrome Samidy](./Stylus/Monochrome.txt)
 
