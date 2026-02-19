@@ -1,0 +1,922 @@
+/* ==UserStyle==
+@name           TUI Monochrome
+@namespace      github.com/ckruu/TUI-Cha
+@version        0.2
+@description    tui for this obsecur- i mean music player!
+@author         Abima
+==/UserStyle== */
+
+@-moz-document domain("monochrome.samidy.com") {
+
+/* TODO: ADD OTHER MONOCHROME WEBSITES */
+    
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --active: #A6E3A1;
+  --inactive: #2C3A39;
+  --bg-dark: #181f1c;
+  --text: #e0e0e0;
+  --text-dim: #808080;
+  --gap: 12px;
+  --border: 1px;
+  --sidebar-width: 250px;
+  --header-height: 70px;
+  --player-height: 90px;
+}
+
+/* base */
+* {
+  font-family: 'JetBrains Mono', monospace !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  background: var(--bg-dark) !important;
+  color: var(--text) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* scrollbar fucker */
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* layout containerr */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* right sidebar */
+div#side-panel {
+  position: fixed !important;
+  right: 12px !important;
+  top: 94px !important;
+  width: 400px !important;
+  height: calc(100vh - 208px) !important;
+  z-index: 900;
+  background: var(--bg-dark) !important;
+  border: 1px solid var(--inactive);
+  padding: 0px 1px 8px 0px !important;
+  margin: 0 !important;
+  transition: all 0.1s ease;
+  overflow: show !important;
+}
+
+div#side-panel::before {
+  content: 'モーダル';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+div#side-panel:hover {
+  border-color: var(--active);
+}
+
+div#side-panel:hover::before {
+  color: var(--active);
+}
+
+/* yet another scrollbar fucker */
+div#side-panel-content.panel-content {
+  height: 0px !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+div#side-panel-content.panel-content ::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+/* make content scrollable */
+div#lyrics-container {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* left sidebar */
+div.sidebar-logo {
+  margin: 4px 0px 14px 12px !important;
+}
+
+aside.sidebar {
+  position: fixed !important;
+  left: var(--gap) !important;
+  top: var(--gap) !important;
+  width: var(--sidebar-width) !important;
+  height: calc(100vh - 24px) !important;
+  z-index: 200;
+  background: transparent !important;
+  border: 1px solid var(--inactive);
+  padding: 16px 8px 6px 8px !important;
+  margin: 0 !important;
+  transition: border-color 0.2s ease;
+  overflow: show !important;
+}
+
+aside.sidebar::before {
+  content: 'サイドバー';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+aside.sidebar:hover {
+  border-color: var(--active);
+}
+
+aside.sidebar:hover::before {
+  color: var(--active);
+}
+
+/* sidebar buttosn */
+aside.sidebar a {
+  color: var(--text) !important;
+  transition: all 0.2s ease;
+  padding: 8px 12px !important;
+  margin: 4px 0 !important;
+  display: block;
+  border-left: 3px solid transparent;
+}
+
+aside.sidebar a:hover {
+  background: rgba(166, 227, 161, 0.1) !important;
+  border-left-color: var(--active);
+}
+
+aside.sidebar a.active {
+  background: rgba(166, 227, 161, 0.15) !important;
+  border-left-color: var(--active);
+  color: var(--active) !important;
+}
+
+/* header */
+header.main-header {
+  position: fixed !important;
+  left: calc(var(--sidebar-width) + var(--gap) * 2) !important;
+  top: var(--gap) !important;
+  right: var(--gap) !important;
+  width: calc(100vw - var(--sidebar-width) - var(--gap) * 3) !important;
+  height: var(--header-height) !important;
+  z-index: 600;
+  background: transparent !important;
+  border: 1px solid var(--inactive);
+  padding: 12px 16px !important;
+  margin: 0px !important;
+  transition: border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header.main-header::before {
+  content: 'ヘッダー';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+header.main-header:hover {
+  border-color: var(--active);
+}
+
+header.main-header:hover::before {
+  color: var(--active);
+}
+
+/* nav controls */
+.navigation-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navigation-controls button {
+  background: transparent !important;
+  border: 0px solid var(--inactive) !important;
+  color: var(--text) !important;
+  padding: 8px 6px !important;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.navigation-controls button:hover {
+  border-color: var(--active) !important;
+  background: rgba(166, 227, 161, 0.1) !important;
+}
+
+/* experiment */
+main.main-content {
+  position: relative;
+  border: 1px solid var(--inactive);
+  padding: 22px 22px 12px 22px !important;
+  margin: 13px 0px 0px 1px !important;
+  overflow: show !important;
+  z-index: 300;
+}
+
+main.main-content::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 300;
+}
+
+main.main-content:hover {
+  border-color: var(--active);
+}
+
+main.main-content:hover::before {
+  color: var(--active);
+}
+
+
+/* searchbar */
+
+form#search-form.search-bar svg {
+  display: none
+}
+
+form#search-form.search-bar {
+  flex: 1;
+  max-width: 2000px;
+  position: relative;
+  border: 0px solid var(--inactive);
+  background: transparent;
+  padding: 15px 12px;
+  margin: 0 6px !important;
+  transition: border-color 0.2s ease;
+}
+
+form#search-form.search-bar::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+form#search-form.search-bar:hover {
+  border-color: var(--active);
+}
+
+form#search-form.search-bar:hover::before {
+  color: var(--active);
+}
+
+input#search-input {
+  background: transparent !important;
+  border: none !important;
+  color: var(--text) !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+}
+
+/* user info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* main content */
+main.main-content {
+  position: fixed !important;
+  left: calc(var(--sidebar-width) + var(--gap) * 2) !important;
+  top: calc(var(--header-height) + var(--gap) * 2) !important;
+  right: var(--gap) !important;
+  bottom: calc(var(--player-height) + var(--gap) * 2) !important;
+  width: calc(100vw - var(--sidebar-width) - var(--gap) * 3) !important;
+  height: calc(100vh - var(--header-height) - var(--player-height) - var(--gap) * 4) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* home */
+#home-content,
+#recommendations-content,
+#settings-content,
+#account-content {
+  position: relative;
+  background: transparent;
+  padding: 16px;
+  margin: 6px 0px 0px 0px !important;
+  min-height: 100%;
+  transition: border-color 0.2s ease;
+}
+
+/* albums and artist or sum */
+header.detail-header {
+  position: relative;
+  border: 1px solid var(--inactive);
+  padding: 22px 2px 12px 22px !important;
+  margin: 7px 0px 0px 1px !important;
+  overflow: show !important;
+}
+
+header.detail-header::before {
+  content: '概要';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+header.detail-header:hover {
+  border-color: var(--active);
+}
+
+header.detail-header:hover::before {
+  color: var(--active);
+}
+
+/* the <- why do i type this */
+div#page-artist section.content-section {
+  position: relative;
+  border: 1px solid var(--inactive);
+  padding: 22px 2px 12px 22px !important;
+  margin: 13px 0px 0px 1px !important;
+  overflow: show !important;
+}
+
+div#page-artist section.content-section::before {
+  content: 'コンテンツ';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+div#page-artist section.content-section:hover {
+  border-color: var(--active);
+}
+
+div#page-artist section.content-section:hover::before {
+  color: var(--active);
+}
+
+/* mix */
+div#mix-detail-tracklist {
+  position: relative;
+  border: 1px solid var(--inactive);
+  padding: 22px 22px 12px 22px !important;
+  margin: 13px 0px 0px 1px !important;
+  overflow: show !important;
+}
+
+div#mix-detail-tracklist::before {
+  content: 'リスト';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+div#mix-detail-tracklist:hover {
+  border-color: var(--active);
+}
+
+div#mix-detail-tracklist:hover::before {
+  color: var(--active);
+}
+
+/* album */
+
+div.album-content-layout {
+  position: relative;
+  border: 1px solid var(--inactive);
+  padding: 16px !important;
+  margin: 14px 0px 0px 1px !important;
+  overflow: show !important;
+}
+
+div.album-content-layout::before {
+  content: '詳細';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+div.album-content-layout:hover {
+  border-color: var(--active);
+}
+
+div.album-content-layout:hover::before {
+  color: var(--active);
+}
+
+/* library */
+div#page-library,
+#section.content-section {
+  position: relative;
+  padding: 16px !important;
+  margin: 7px 0px 0px 1px !important;
+  min-height: calc(100vh - 215px) !important;
+  overflow: show !important;
+}
+
+/* search resoults */
+div#page-search,
+#section.content-section {
+  position: relative;
+  padding: 18px !important;
+  margin: 7px 0px 0px 1px !important;
+  min-height: calc(100vh - 215px) !important;
+  overflow: show !important;
+}
+
+/* recents */
+div#page-recent {
+  position: relative;
+  padding: 16px !important;
+  margin: 6px 0px 0px 1px !important;
+  min-height: calc(100vh - 215px) !important;
+  overflow: show !important;
+}
+
+
+/* settings */
+div#page-settings {
+  position: relative;
+  padding: 16px !important;
+  margin: 6px 0px 0px 1px !important;
+  min-height: calc(100vh - 215px) !important;
+  overflow: show !important;
+}
+
+/* account */
+div#page-account {
+  position: relative;
+  padding: 90px !important;
+  margin: 6px 0px 0px 1px !important;
+  min-height: calc(100vh - 215px) !important;
+  overflow: show !important;
+}
+
+/* about */
+div#page-about {
+  position: relative;
+  padding: 26px !important;
+  margin: 6px 0px 0px 1px !important;
+  min-height: calc(100vh - 215px) !important;
+  overflow: show !important;
+}
+
+nav.sidebar-nav li:has(a[href="/download"]) {
+    display: none !important;
+}
+
+nav.sidebar-nav li:has(a[href="https://monochrome.samidy.com/discord"]) {
+    display: none !important;
+}
+
+/* song lists */
+.song-list,
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.song-item,
+.track-item {
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 12px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.song-item:hover,
+.track-item:hover {
+  border-color: var(--active);
+  background: rgba(166, 227, 161, 0.05);
+}
+
+.song-item.active,
+.track-item.active {
+  border-color: var(--active);
+  background: rgba(166, 227, 161, 0.1);
+}
+
+/* footer - now playin */
+footer.now-playing-bar {
+  position: fixed !important;
+  left: calc(var(--sidebar-width) + var(--gap) * 2) !important;
+  bottom: var(--gap) !important;
+  right: var(--gap) !important;
+  width: calc(100vw - var(--sidebar-width) - var(--gap) * 3) !important;
+  height: var(--player-height) !important;
+  z-index: 150;
+  background: transparent !important;
+  border: 1px solid var(--inactive);
+  padding: 12px 16px !important;
+  margin: 0px !important;
+  transition: border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: none !important;
+}
+
+footer.now-playing-bar::before {
+  content: 'プレイ';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+footer.now-playing-bar:hover {
+  border-color: var(--active);
+}
+
+footer.now-playing-bar:hover::before {
+  color: var(--active);
+}
+
+/* track info */
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.track-info img {
+  width: 56px;
+  height: 56px;
+  border: var(--border) solid var(--inactive);
+  object-fit: cover;
+}
+
+.track-details {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.track-title {
+  color: var(--text) !important;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: var(--text-dim) !important;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* player controls */
+.player-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  flex: 2;
+  max-width: 600px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.control-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.control-buttons button {
+  background: transparent !important;
+  border: 1px solid var(--inactive) !important;
+  color: var(--text) !important;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.control-buttons button:hover {
+  border-color: var(--active) !important;
+  background: rgba(166, 227, 161, 0.1) !important;
+}
+
+/* progress bar */
+
+div.player-controls button {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex: 1;
+  justify-content: flex-end;
+  margin: 4px -6px 0px 0px !important;
+  padding: 8px !important;
+}
+
+.progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-bar input[type="range"] {
+  flex: 1;
+  background: transparent !important;
+  border: var(--border) solid var(--inactive) !important;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.progress-bar input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--active);
+  border: var(--border) solid var(--active);
+  cursor: pointer;
+}
+
+.progress-bar input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--active);
+  border: var(--border) solid var(--active);
+  cursor: pointer;
+}
+
+.time-display {
+  color: var(--text-dim) !important;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* volume controls */
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: flex-end;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.volume-controls button {
+  background: transparent !important;
+  border: var(--border) solid var(--inactive) !important;
+  color: var(--text) !important;
+  padding: 6px !important;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  margin: 0px -6px 0px 0px !important;
+}
+
+.volume-controls button:hover {
+  border-color: var(--active) !important;
+  background: rgba(166, 227, 161, 0.1) !important;
+}
+
+.volume-controls input[type="range"] {
+  width: 100px;
+  background: transparent !important;
+  border: var(--border) solid var(--inactive) !important;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* sect w titles */
+section.songs-section,
+section.playlists-section,
+section.albums-section {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 20px 16px 16px;
+  margin: var(--gap) 0;
+  transition: border-color 0.2s ease;
+}
+
+section.songs-section::before {
+  content: '曲';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+section.songs-section:hover {
+  border-color: var(--active);
+}
+
+section.songs-section:hover::before {
+  color: var(--active);
+}
+
+/* an attempt at album cards on homescreen */
+.artist-card,
+.album-card,
+.playlist-card,
+.track-card,
+.card,
+.grid-item,
+.media-card,
+a.card,
+div[class*="card"],
+div[class*="item"] {
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.artist-card:hover,
+.album-card:hover,
+.playlist-card:hover,
+.track-card:hover,
+.card:hover,
+.grid-item:hover,
+.media-card:hover {
+  border-color: var(--active) !important;
+}
+
+/* another attempt at it but with borders */
+.artist-card img,
+.album-card img,
+.playlist-card img,
+.track-card img,
+.card img {
+  border: var(--border) solid var(--inactive) !important;
+}
+
+/* generic containers */
+a[href*="/artist/"],
+a[href*="/album/"],
+a[href*="/playlist/"],
+a[href*="/track/"] {
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent !important;
+  display: block !important;
+  transition: border-color 0.2s ease !important;
+}
+
+a[href*="/artist/"]:hover,
+a[href*="/album/"]:hover,
+a[href*="/playlist/"]:hover,
+a[href*="/track/"]:hover {
+  border-color: var(--active) !important;
+}
+
+/* text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text) !important;
+}
+
+p, span, div, label {
+  color: var(--text) !important;
+}
+
+a {
+  color: var(--active) !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--active) !important;
+}
+
+/* buttons */
+button,
+.button,
+input[type="button"],
+input[type="submit"] {
+  background: transparent !important;
+  border: var(--border) solid var(--inactive) !important;
+  color: var(--text) !important;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  border-color: var(--active) !important;
+  background: rgba(166, 227, 161, 0.1) !important;
+}
+
+/* remove sum efeks */
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+}

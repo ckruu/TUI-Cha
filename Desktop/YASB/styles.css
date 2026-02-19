@@ -1,0 +1,468 @@
+/*VARIABLES AND SOME DEFAULT SETTINGS*/
+:root {
+    --rosewater: #f5e0dc;
+    --flamingo: #f2cdcd;
+    --pink: #f5c2e7;
+    --mauve: #cba6f7;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #A6E3A1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #A3C1EB;
+    --lavender: #b4befe;
+    --text: #F4FFEF;
+    --subtext1: #bac2de;
+    --subtext0: #a6adc8;
+    --overlay2: #9399b2;
+    --overlay1: #7f849c;
+    --overlay0: #6c7086;
+    --surface2: #585b70;
+    --surface1: #181f1ca8;
+    --surface0: #181f1c;
+    --base: #181F1C;
+    --mantle: #181825;
+    --crust: #11111b;
+    --trbg: #181f1ce7;
+}
+
+*{
+    color: #ebdbb2;
+    font-weight: 700;
+    font-family: "JetBrainsMono NFP";
+    margin: 0;
+    padding: 0;
+}
+/*GENERAL CONFIGRATIONS*/
+.yasb-bar {
+    background-color: #181f1ce7;
+    /*border: 1px solid var(--green);*/
+    padding: 0;
+	margin: 0;
+}
+.widget {
+    padding: 0 0px;
+    margin: 0 1px;
+    border-radius: 0px;
+}
+.widget .icon {
+    font-size: 18px;
+}
+.widget .label {
+    color: var(--text);
+}
+QPushButton {
+    outline: none;
+}
+/*ACTIVE WINDOW WIDGET*/
+.active-window-widget {
+    padding-top: 2px;
+    padding-right: 11px;
+    padding-left: 0px;
+}
+.active-window-widget .label {
+    font-size: 12px;
+}
+.active-window-widget .icon {
+    padding-right: 6px;
+    border: var(--green);
+    border-width: 2px;
+}
+/*CLOCK - CALENDAR WIDGET*/
+.clock-widget {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.clock-widget .label {
+    padding-top: 2px;
+    font-size: 12px;
+}
+/*CLOCK - CALENDAR WIDGET DROPDOWN*/
+.calendar {
+    background-color: var(--trbg);
+    border-radius: 0px;
+    border: 1px solid var(--green);
+}
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(17, 17, 27, 0);
+    color: #ffffff2d;
+    font-family: 'JetBrainsMono NFP';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;  
+}
+.calendar .calendar-table::item:selected {
+    color: var(--text);
+    background-color: #ffffff17;
+}
+.calendar .day-label {
+    margin-top: 20px;
+    color: var(--text);
+}
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: 'JetBrainsMono NFP';
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+.calendar .month-label {
+    color: var(--text);
+    font-weight: normal;
+}
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: var(--text);;
+    margin-top: -20px;
+}
+/*AUDIO WIDGET*/
+.volume-widget {
+    padding-right: -3px;
+    padding-left: 0px;
+    font-size: 12px;
+    color: var(--green);
+}
+.volume-widget .icon {
+    font-size: 12px;
+    padding: 0 6px;
+    padding-right: 8px;
+    padding-left: 15px;
+    color: var(--green);
+}
+.volume-widget .label {
+    padding-top: 2px;
+    font-size: 12px;
+    color: var(--green);
+}
+/*AUDIO DROPDOWN*/
+.audio-menu {
+    border-radius: 0px;
+    background-color: var(--trbg);
+    border: 1px solid var(--green);
+}
+.audio-container .device {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 4px 8px 2px 8px;
+    margin: 2px 0;
+    font-size: 12px;
+    border-radius: 0px;
+    color: var(--text);
+}
+.audio-container .device.selected {
+    background-color: #cdd6f41a;
+    border-radius: 0px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+.audio-container .device:hover {
+    background-color: #cdd6f40c;
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+/*MEDIA WIDGET*/
+.media-widget .icon{
+    padding-right: 3px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    background-color: var(--surface1);
+    font-size: 12px;
+}
+.media-widget .label {
+    padding-top: 1px;
+    padding-right: 12px;
+    color: var(--text);
+    font-size: 12px;
+}
+/*sep*/
+.media-widget .icon{
+	font-family: "JetBrainsMono NFP";
+    color: var(--blue);
+    padding: 0 6px;
+}
+.media-widget .btn {
+    color: var(--text);
+    padding: 0 0px;
+    margin: 0;
+}
+.media-menu {
+	font-family: "JetBrainsMono NFP";
+    min-width: 380px;
+    max-width: 100px;
+    background-color: var(--trbg);
+    border: 1px solid var(--green);
+}
+.media-menu .title {
+    font-size: 15px;
+    color: var(--text);
+    font-weight: 800;
+    margin-left: 16px;
+    margin-top: 4px;
+}
+.media-menu .artist {
+    font-size: 12px;
+    color: #6c7086;
+    margin-bottom: 0px;
+    margin-top: 1px;
+    margin-left: 16px;
+}
+.media-menu .source {
+    font-size: 11px;
+    color: #000;
+    font-weight: normal;
+    border-radius: 3px;
+    background-color: #bac2de;
+    padding: 2px 4px;
+}
+.media-menu .btn {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px -14px 0px 0px;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    border-radius: 10px;
+}
+.media-menu .btn.prev {
+    margin-left: 10px;
+}
+.media-menu .btn.play {
+    font-size: 18px;
+}
+.media-menu .playback-time {
+    font-size: 10px;
+	font-family: "JetBrainsMono NFP";
+    color: #7f849c;
+    margin-top: 10px;
+    min-width: 120px;
+}
+.media-menu .progress-slider {
+    height: 10px;
+    margin: 0px 3px;
+    border-radius: 3px;
+}
+.media-menu .progress-slider::groove {
+    background: transparent;
+    height: 2px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.media-menu .progress-slider::sub-page {
+    background: var(--text);
+    border-radius: 3px;
+    height: 4px;
+}
+/*POWER WIDGET*/
+.power-menu-widget {
+    padding-right: 12px;
+    padding-left: 7px;
+    font-size: 13px;
+}
+.power-menu-widget .label {
+    padding-top: 2px;
+    padding-right: 0px;
+	color: var(--green);
+    font-size: 12px;
+    padding-bottom: 0px;
+}
+.power-menu-widget .icon {
+    font-size: 12px;
+}
+/*POWER MENU POPUP*/
+.uptime {
+	font-size: 12px;
+	margin-bottom: 10px;
+	color: var(--text);
+	font-weight: 800;
+	font-family: "JetBrainsMono NFP";
+}
+.power-menu-popup {
+    margin: 10px 10px 10px 10px;
+    background-color: var(--base);
+}
+.power-menu-popup .button {
+	padding: 0;
+	width: 110px;
+	height: 55px;
+	border-radius: 0px;
+	font-family: "JetBrainsMono NFP";
+    border: 1px solid var(--base);
+}
+.power-menu-popup .button .label {
+	margin-bottom: 0px;
+	font-size: 12px;
+	font-weight: 600;
+	font-family: "JetBrainsMono NFP";
+}
+.power-menu-popup .button.cancel .label {
+	color: var(--text);
+}
+.power-menu-popup .button.cancel .label:hover {
+	color: var(--base);
+}
+.power-menu-popup .button.cancel:hover {
+    background-color: var(--green);
+    border: 1px solid var(--green);
+}
+
+/* FUCK */
+.power-menu-popup .button.shutdown .label {
+    background-color: var(--base);
+	color: var(--red);
+}
+.power-menu-popup .button.shutdown:hover {
+    background-color: var(--base);
+    border: 1px solid var(--green);
+}
+.power-menu-popup .button.restart .label {
+    background-color: var(--base);
+	color: var(--green);
+}
+.power-menu-popup .button.restart:hover {
+    background-color: var(--base);
+    border: 1px solid var(--green);
+}
+.power-menu-popup .button.hibernate .label {
+    background-color: var(--base);
+	color: var(--yellow);
+}
+.power-menu-popup .button.hibernate:hover {
+    background-color: var(--base);
+    border: 1px solid var(--green);
+}
+.power-menu-popup .button.signout .label {
+    background-color: var(--base);
+	color: var(--teal);
+}
+.power-menu-popup .button.signout:hover {
+    background-color: var(--base);
+    border: 1px solid var(--green);
+}
+/*MEMORY WIDGET*/
+.memory-widget {
+    padding: 0;
+    padding-left: 0px;
+    padding-right: 5px;
+}
+.memory-widget .label {
+    color: var(--green);
+    padding-top: 2px;
+    font-size: 12px;
+    padding-left: 7px;
+}
+.memory-widget .icon{
+    color: var(--green);
+    margin-bottom: 0%;
+    font-size: 12px;
+    padding-left: 14px;
+    padding-right: 1px;
+    padding-top: 1px;
+}
+/*BATTERY WIDGET*/
+.battery-widget {
+    padding: 0;
+    padding-left: 1px;
+    padding-right: 9px;
+}
+.battery-widget .label {
+    color: var(--green);
+    font-size: 12px;
+    padding-left: 4px;
+    padding-top: 1px;
+}
+.battery-widget .icon {
+    color: var(--green);
+    padding-bottom: 0px;
+    font-size: 12px;
+    padding-top: 1px;
+    padding-left: 14px;
+    padding-right: 3px;
+}
+/*NOTIFICATIONS*/
+.notification-widget {
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 6px;
+}
+.notification-widget .icon {
+    color: var(--red);
+    font-size: 13px;
+    padding-right: 0px;
+}
+.notification-widget .label {
+    padding-top: 2px;
+    font-size: 12px;
+    padding-right: 5px;
+    color: var(--green);
+}
+.glazewm-workspaces {
+    padding: 0px;
+    padding-left: 9px;
+    padding-right: -4px;
+}
+.glazewm-workspaces .icon .label {
+    color: var(--text);
+    font-size: 13px;
+}
+.glazewm-workspaces .ws-btn {
+    color: #a6e3a16c;
+    font-size: 12px;
+    border: none;
+    padding: 0px 2px 0px 2px;
+    margin: 0 10px 0 0px;
+    padding-top: 1px;
+}
+.glazewm-workspaces .ws-btn.active_populated {
+    color: var(--green);
+    font-weight: 900;
+    border-radius: 0px;
+    font-size: 12px;
+    padding-bottom: -1px;
+    margin: 0px 10px 1px 0px;
+    border-bottom: 1px solid var(--green);
+    border-bottom-width: 1px;
+}
+.glazewm-workspaces .ws-btn.active_empty {
+    color: var(--text);
+    border-radius: 0px;
+    padding-top: 2px;
+    border-bottom: 1px solid var(--text);
+    border-bottom-width: 1px;
+}
+/* WIFI Setting */
+.wifi-widget .label{
+    font-size: 12px;
+    color: var(--green);
+    padding-left: 0px;
+    padding-top: 1px;
+    padding-right: 4px;
+}
+.wifi-widget .icon {
+    font-size: 12px;
+    color: var(--green);
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-right: 4px;
+}
+.gpu-widget .icon {
+    font-size: 12px;
+    color: var(--green);
+    padding-right: 8%;
+    padding-left: 12px;
+}
+.gpu-widget .label {
+    color: var(--green);
+    padding-left: 12px;
+}
