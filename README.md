@@ -1,7 +1,7 @@
 <div align="center">
 
 <br>
-<img src="./resources/banner/banner.png" width="230" alt="TUI-Cha Banner" />
+<img src="./Resources/Banner/Banner.png" width="230" alt="TUI-Cha Banner" />
 <br>
 
 TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
