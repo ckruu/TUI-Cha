@@ -43,7 +43,7 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 #### 1. Lockscreen Styler (Start Menu Fork)
 > Currently only on the left side.
 
-[📜 Config](./Windhawk/Lockscreen.txt) • [Quinquefive - Clock Font](https://ggbot.itch.io/quinquefive-font) • [Pixelify Sans - Date Font](https://fonts.google.com/specimen/Pixelify+Sans).
+[📜 Config](./Windhawk/Lockscreen.txt) • [🔠 Quinquefive - Clock Font](https://ggbot.itch.io/quinquefive-font) • [🔠 Pixelify Sans - Date Font](https://fonts.google.com/specimen/Pixelify+Sans).
 
 #### 2. Windows Notification Placement
 > Will mess up when used in diffrent DPI and resolution.
