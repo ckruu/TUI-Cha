@@ -85,14 +85,14 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
     <img src="./Screenshots/WM1.png" width="100% alt="WM Preview 1" />
 <br>
 
-Get [GlazeWM](https://github.com/glzr-io/glazewm) • Also [Config](./Desktop/GlazeWM/config.yaml)
+Get [📬 GlazeWM](https://github.com/glzr-io/glazewm) • Also [📜 Config](./Desktop/GlazeWM/config.yaml)
 
 ## YASB
 <br>
     <img src="./Screenshots/YASB1.png" width="100% alt="YASB Preview 1" />
 <br>
 
-Get [YASB](https://github.com/amnweb/yasb) • [Config](./Desktop/YASB/config.yaml) • [Styles](./Desktop/YASB/styles.css)
+Get [📬 YASB](https://github.com/amnweb/yasb) • [📜 Config](./Desktop/YASB/config.yaml) • [🎨 Styles](./Desktop/YASB/styles.css)
 
 ## Third-party Apps
 <br>
@@ -100,18 +100,24 @@ Get [YASB](https://github.com/amnweb/yasb) • [Config](./Desktop/YASB/config.ya
 <br>
 
 #### 1. Vesktop (Discord)
-A custom modification of [System24](https://github.com/refact0r/system24) theme.
+A custom modification of [📬 System24](https://github.com/refact0r/system24) theme.
 
 #### 2. Windows Terminal
-Windows terminal with focus mode and [NodoCha](./Windhawk/WT.txt) theme.
+Windows terminal with focus mode and [🎨 NodoCha](./Windhawk/WT.txt) theme.
 
-#### 3. VS Code
-WIP!
+#### 3. Flow Launcher
+Get [📬 Flow Launcher](https://www.flowlauncher.com/) • With [🎨 Theme](./Flow%20Launcher/Theme%20Nodocha.xaml) • Also with [🎨 Modified Windows 11 Style](./Flow%20Launcher/Win11Light.xaml)
 
-#### 4. Zen Browser
-A custom modification of [Wireframe](https://github.com/SehajveerSingh2005/zen-wireframe-2.0).
+#### 4. Nilesoft Shell
+Get [📬 Nilesoft Shell](https://nilesoft.org/) • With [🎨 Theme](./Desktop/Flow%20Launcher/theme.nss).
 
-#### 5. Rectify11 V4
+#### 5. VS Code
+[🎨 Theme](./VS%20Code/NodoCha.json) running on [VS Code](https://code.visualstudio.com/download).
+
+#### 6. Zen Browser
+A custom modification of [📬 Wireframe](https://github.com/SehajveerSingh2005/zen-wireframe-2.0) runnig on top of [🌐 Zen Browser](https://zen-browser.app/).
+
+#### 7. Rectify11 V4
 > This also still work in progress, it is not recommended to install on your main machine.
 
 Used [Rectify11](https://rectify11.net/home) to make Windows 11 more cconsistent. Use the [V4 Beta](https://discord.gg/gsgu9GCtsk) on their Discord channel for a newer version of Windows.
@@ -119,22 +125,22 @@ Used [Rectify11](https://rectify11.net/home) to make Windows 11 more cconsistent
 
 ## Stylus
 <br>
-<img src="./Screenshots/STYLUS1.png" width="100%  alt="Stylus Preview 1" />
+<img src="./Screenshots/STYLUS1.png" width="100% alt="Stylus Preview 1" />
 <br>
 
-Use Stylus • [Chromium-based Browsers](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?pli=1) • [Firefox-based Browsers](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
+Use Stylus • [🌐 Chromium-based Browsers](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?pli=1) • [🌐 Firefox-based Browsers](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
 
 > This is a work in progress, some elements may appear unstyled or broken in diffrent scenarios, It also weirdly causes some website to perform poorly. Use at your own risk.
 
 #### TUI-YouTube
 > Has some unfinished pages and elements, and would lag or freeze sometimes, at certain resolution/browser size.
 
-[TUI Tube](./Stylus/TUITube.txt)
+[🎨 TUI Tube](./Stylus/TUITube.txt)
 
 #### Tui-Monochrome Music
 > Has some dublicate styling applied, and some newly added feature isnt styled yet.
 
-[Monochrome Samidy](./Stylus/Monochrome.txt)
+[🎨 Monochrome Samidy](./Stylus/Monochrome.txt)
 
 #### TUI Reddit
 > Still very early and unusable.
@@ -145,3 +151,6 @@ Coming soon!
 > Also still very early to be usable.
 
 Coming soon!
+
+#### Other websites
+Currently using modified [📬 Catppuccin Mocha](https://userstyles.catppuccin.com/) stylus pack.
