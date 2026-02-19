@@ -36,9 +36,8 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 
 ## Windhawk Mods
 ### Lockscreen Styler (Start Menu Fork)
- Preview
-<img src="./Screenshots/Lockscreen.png" width="600" alt="TUI-Cha Lockscreen" />
+<img src="./Screenshots/Lockscreen.png" alt="TUI-Cha Lockscreen" />
 
- [Mod Code](./Windhawk/Lockscreen.txt)
+[📜 Mod Code](./Windhawk/Lockscreen.txt)
 
  ###
