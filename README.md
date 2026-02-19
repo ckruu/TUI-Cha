@@ -9,23 +9,21 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 > Please note this mostly is still work in progress, expect some modifications in the future.
 > This setup was only tested on 1920 x 1080 monitor with 100% Scaling, expect things to break if you're planning on using this setup on another screen resolution or scaling.
 
-[Windhawk Mods](google.com) •
-[WM](google.com) •
-[YASB](google.com) •
-[Third-party Apps](google.com) •
-[Stylus](google.com)
+[Windhawk Mods](#windhawk-mods) •
+[WM](#window-manager) •
+[YASB](#yasb) •
+[Third-party Apps](#third-party-apps) •
+[Stylus](#stylus)
 
 </div>
 
 ### Features
-
 - Green focused theme
 - Simple yet functional bar
 - No distraction
 - Calm and elegant, just like Nodoka
 
 ### Theme Status
-
 | Apps                      | Websites                   |
 | --------------------------|----------------------------|
 | GlazeWM (💚)              | YouTube (🟢)               |
@@ -111,6 +109,7 @@ A custom modification of [Wireframe](https://github.com/SehajveerSingh2005/zen-w
 
 #### 5. Rectify11 V4
 > This also still work in progress, it is not recommended to install on your main machine.
+
 Used [Rectify11](https://rectify11.net/home) to make Windows 11 more cconsistent. Use the [V4 Beta](https://discord.gg/gsgu9GCtsk) on their Discord channel for a newer version of Windows.
 
 
@@ -122,16 +121,20 @@ Used [Rectify11](https://rectify11.net/home) to make Windows 11 more cconsistent
 
 #### TUI-YouTube
 > Has some unfinished pages and elements, and would lag or freeze sometimes, at certain resolution/browser size.
+
 [TUI Tube](./Stylus/TUITube.txt)
 
 #### Tui-Monochrome Music
 > Has some dublicate styling applied, and some newly added feature isnt styled yet.
+
 [Monochrome Samidy](./Stylus/Monochrome.txt)
 
 #### TUI Reddit
 > Still very early and unusable.
+
 Coming soon!
 
 #### TUI DuckDuckGo
 > Also still very early to be usable.
+
 Coming soon!
