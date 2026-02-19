@@ -36,10 +36,17 @@ TUI Version of [NodoCha](https://github.com/ckruu/NodoCha-For-Windows)
 | Zen Browser (🔶)          | WhatsApp (🗓️)              |
 
 ## Windhawk Mods
+<p>
+<img src="./Screenshots/Windhawk1.png" alt="Mod Preview 1" width="100%/> 
+</p>
 
-<img src="./Screenshots/Windhawk1.png" alt="Mod Preview 1" width="100%/>
+<p>
 <img src="./Screenshots/Windhawk2.png" alt="TUI-Cha Lockscreen" width="100%/>
+</p>
+
+<p>
 <img src="./Screenshots/Windhawk3.png" alt="Mod Preview 2" width="100%/>
+</p>
 
 #### 1. Lockscreen Styler (Start Menu Fork)
 > Currently only on the left side.
