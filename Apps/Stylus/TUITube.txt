@@ -1,0 +1,1154 @@
+/* ==UserStyle==
+@name           YouTube TUI Theme
+@namespace      github.com/ckruu/TUI-Cha
+@version        0.2
+@description    idk, youtube but TUI
+@author         Abima
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --active: #A6E3A1;
+  --inactive: #2C3A39;
+  --bg-dark: #181f1c;
+  --text: #e0e0e0;
+  --text-dim: #808080;
+  --gap: 4px;
+  --head: 10px;
+  --border: 1px;
+  --divider: 9px;
+}
+
+/* main cont - home */
+* {
+  font-family: 'JetBrains Mono', monospace !important;
+  border-radius: 0 !important;
+}
+
+body, ytd-app {
+  background: var(--bg-dark) !important;
+  color: var(--text) !important;
+}
+
+/* bg remover 2000 */
+ytd-watch-flexy,
+#page-manager,
+ytd-page-manager,
+#primary,
+#secondary,
+#contents,
+ytd-browse {
+  background: transparent !important;
+}
+
+/* who need blur effects */
+.ytp-gradient-top,
+.ytp-gradient-bottom,
+ytd-watch-flexy[fullscreen] .ytp-gradient-top,
+ytd-watch-flexy[fullscreen] .ytp-gradient-bottom,
+.ytp-chrome-top,
+#frosted-glass,
+.ytp-chrome-bottom {
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+    #voice-search-button {
+        display: none !important;
+    }
+
+/* scrollbar hider 2000 - this kinda working... or not... */
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+* {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+/* scroillables */
+body,
+html,
+ytd-app {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* top nav */
+#masthead-container {
+  position: fixed !important;
+  top: 0px;
+  left: 6px;
+  right: 6px;
+  z-index: 2020;
+  background: var(--bg-dark) !important;
+  padding: 10px 90px 18px 4px !important;
+  margin: 0 !important;
+  height: 45px !important;
+  max-width: calc(100vw - 22px);
+}
+
+ytd-masthead {
+  background: var(--bg-dark) !important;
+  border: var(--border) solid var(--inactive) !important;
+  transition: border-color 0.2s ease;
+  position: relative;
+  padding: 0px 0px 0px 0px !important;
+  max-height: 60px;
+  width: 100%;
+}
+
+ytd-masthead::before {
+  content: 'ナビ';
+  position: absolute;
+  top: -10px;
+  left: 8px;
+  background: var(--bg-dark) !important;
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-masthead:hover {
+  border: var(--border) solid var(--active) !important;
+}
+
+ytd-masthead:hover::before {
+  color: var(--active);
+}
+
+/* top padding & border fixer */
+ytd-page-manager {
+  margin-top: 82px !important;
+  margin-left: -16px !important;
+  margin-right: 3px !important;
+}
+
+/* sidebar */
+/* main grid cont */
+
+#content-container {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none;        
+}
+
+tp-yt-app-drawer#guide {
+  background: transparent !important;
+}
+
+#guide-content {
+  background: transparent !important;
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  transition: border-color 0.2s ease;
+  margin: 35px 10px 10px 10px;
+  padding: 2px 0px -30px 0px;
+  min-height: calc(100vh - 100px);
+  overflow: visible !important;
+}
+
+#guide-content::before {
+  content: 'サイドバー';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+#guide-content:hover {
+  border-color: var(--active);
+}
+
+#guide-content:hover::before {
+  color: var(--active);
+}
+
+ytd-guide-renderer,
+#guide-content {
+  background: transparent !important;
+}
+
+#guide-wrapper {
+  position: relative !important;
+  height: auto !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+ytd-guide-entry-renderer,
+ytd-guide-collapsible-entry-renderer {
+  transition: background 0.2s ease;
+}
+
+ytd-guide-entry-renderer:hover,
+ytd-guide-collapsible-entry-renderer:hover {
+  background: rgba(166, 227, 161, 0.1) !important;
+}
+
+ytd-guide-entry-renderer[active] {
+  background: rgba(166, 227, 161, 0.15) !important;
+  border-left: 3px solid var(--active);
+}
+
+/* this make element responsive upon sidebar interaction, also kinda broken lol */
+ytd-app[guide-persistent-and-visible] ytd-browse,
+ytd-app[guide-persistent-and-visible] ytd-watch-flexy,
+ytd-app[guide-persistent-and-visible] ytd-search {
+  margin-left: 236px !important;
+}
+
+/* content area */
+ytd-watch-flexy {
+  margin: 0px !important;
+  padding: 0px 8px 0px 11px !important;
+}
+
+#columns {
+  padding: 0 !important;
+  gap: 13px !important;
+}
+
+#primary {
+  padding: 0px !important;
+}
+
+#primary-inner {
+  padding: 0px !important;
+}
+
+/* video player frame */
+#player-container,
+#movie_player {
+  position: relative;
+  margin: 0px !important;
+  padding: 0 !important;
+}
+
+#player {
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: border-color 0.2s ease;
+  position: relative;
+}
+
+#player::before {
+  content: 'ビデオ';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+#player:hover {
+  border-color: var(--active);
+}
+
+#player:hover::before {
+  color: var(--active);
+}
+
+.html5-video-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* theater mode - this is broken as fuck */
+ytd-watch-flexy[theater] {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+
+ytd-watch-flexy[theater] #player-theater-container {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+ytd-watch-flexy[theater] #primary {
+  padding: 0 0px !important;
+}
+
+ytd-watch-flexy[theater] #secondary {
+  margin-top: 16px !important;
+  padding-right: 0px !important;
+}
+
+/* mini player, who the hell uses this */
+.miniplayer .ytp-miniplayer-ui:hover {
+  border-color: var(--active) !important;
+}
+
+.miniplayer .ytp-miniplayer-ui:hover::before {
+  color: var(--active);
+}
+
+/* iniplayer scrim */
+ytd-miniplayer {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: var(--bg-dark) !important;
+  transition: border-color 0.2s ease;
+  margin: 0px -5px -8px 0px !important;
+}
+
+ytd-miniplayer:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-miniplayer:hover::before {
+  color: var(--active);
+}
+
+/* right side stuff */
+#secondary {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#secondary-inner {
+  padding: 0px !important;
+}
+
+/* reccommended vid or related */
+#related {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 6px 13px;
+  transition: border-color 0.2s ease;
+}
+
+#related::before {
+  content: 'おすすめ';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+#related:hover {
+  border-color: var(--active);
+}
+
+#related:hover::before {
+  color: var(--active);
+}
+
+/* playlist */
+ytd-playlist-panel-renderer {
+  padding: 4px 0px;
+  position: relative !important;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent !important;
+  transition: border-color 0.2s ease !important;
+}
+
+ytd-playlist-panel-renderer::before {
+  content: 'プレイリスト';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-playlist-panel-renderer:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-playlist-panel-renderer:hover::before {
+  color: var(--active);
+}
+
+/* type shi - jk ts is the button to open liv cat */
+yt-video-metadata-carousel-view-model {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent !important;
+  transition: border-color 0.2s ease;
+  margin: 0px 0px 0px 6px;
+  overflow: visible !important;
+}
+
+yt-video-metadata-carousel-view-model::before {
+  content: 'チャット';
+  position: absolute;
+  overflow: visible !important;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark) !important;
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+yt-video-metadata-carousel-view-model:hover {
+  border-color: var(--active) !important;
+}
+
+yt-video-metadata-carousel-view-model:hover::before {
+  color: var(--active);
+}
+
+/* live chat & reply, has a broken padding sometimes */
+/* laivu chatto */
+ytd-live-chat-frame#chat {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent !important;
+  transition: border-color 0.2s ease;
+  margin-top: 0px;
+  overflow: visible !important;
+}
+
+ytd-live-chat-frame#chat::before {
+  content: 'チャット';
+  position: absolute;
+  overflow: visible !important;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark) !important;
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-live-chat-frame#chat:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-live-chat-frame#chat:hover::before {
+  color: var(--active);
+}
+
+/* chat reply button next to desc */
+ytd-toggle-button-renderer#chat-replay-button,
+ytd-button-renderer.ytd-video-description-header-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 6px 10px;
+  margin-left: 8px;
+  transition: border-color 0.2s ease;
+}
+
+ytd-toggle-button-renderer#chat-replay-button::before,
+ytd-button-renderer.ytd-video-description-header-renderer::before {
+  content: '過去チャット';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-toggle-button-renderer#chat-replay-button:hover,
+ytd-button-renderer.ytd-video-description-header-renderer:hover {
+  border-color: var(--active);
+}
+
+ytd-toggle-button-renderer#chat-replay-button:hover::before,
+ytd-button-renderer.ytd-video-description-header-renderer:hover::before {
+  color: var(--active);
+}
+
+/* chapters */
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-macro-markers-description-chapters"] {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: var(--bg-dark) !important;
+  transition: border-color 0.2s ease;
+  overflow: visible !important;
+  contain: none !important;
+}
+
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-macro-markers-description-chapters"]::before {
+  content: 'チャプター' !important;
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 1200;
+}
+
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-macro-markers-description-chapters"]:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-macro-markers-description-chapters"]:hover::before {
+  color: var(--active) !important;
+}
+
+/* chat replay container when expanded */
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-chat-messages"] {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: var(--bg-dark) !important;
+  transition: border-color 0.2s ease;
+}
+
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-chat-messages"]::before {
+  content: 'チャットリプレイ';
+  position: absolute;
+  top: -1px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-chat-messages"]:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-chat-messages"]:hover::before {
+  color: var(--active);
+}
+
+/* stuff below main vid */
+#below {
+  margin-top: 16px !important;
+}
+
+/* title container */
+#title.ytd-watch-metadata {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 10px 12px;
+  margin-bottom: 9px;
+  transition: border-color 0.2s ease;
+}
+
+#title.ytd-watch-metadata::before {
+  content: 'タイトル';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+#title.ytd-watch-metadata:hover {
+  border-color: var(--active);
+}
+
+#title.ytd-watch-metadata:hover::before {
+  color: var(--active);
+}
+
+/* actions */
+#actions.ytd-watch-metadata {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 8px 12px;
+  margin-bottom: var(--gap);
+  margin-left: -16px !important;
+  transition: border-color 0.2s ease;
+}
+
+#actions.ytd-watch-metadata::before {
+  content: 'アクション';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+#actions.ytd-watch-metadata:hover {
+  border-color: var(--active);
+}
+
+#actions.ytd-watch-metadata:hover::before {
+  color: var(--active);
+}
+
+#top-level-buttons-computed {
+  gap: 8px;
+}
+
+/* seperate channel info */
+ytd-watch-metadata #owner {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 8px 12px;
+  margin-bottom: var(--gap);
+  margin-left: 0px !important;
+  transition: border-color 0.2s ease;
+}
+
+ytd-watch-metadata #owner::before {
+  content: 'チャンネル';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-watch-metadata #owner:hover {
+  border-color: var(--active);
+}
+
+ytd-watch-metadata #owner:hover::before {
+  color: var(--active);
+}
+
+/* fix double styling */
+ytd-video-owner-renderer {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+ytd-video-owner-renderer::before {
+  display: none !important;
+}
+
+/* tickets for artist or mvs idk */
+ytd-ticket-shelf-renderer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--inactive);
+  z-index: 5;
+}
+
+ytd-ticket-shelf-renderer:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--active);
+  z-index: 5;
+}
+
+ytd-ticket-shelf-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: var(--bg-dark);
+  padding: 10px 0px 0px 10px !important;
+  margin: 0px 0px 20px 0px;
+  transition: border-color 0.2s ease;
+  overflow: visible !important;
+}
+
+ytd-ticket-shelf-renderer::before {
+  content: 'イベント';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-ticket-shelf-renderer:hover {
+  border-color: var(--active);
+}
+
+ytd-ticket-shelf-renderer:hover::before {
+  color: var(--active);
+}   
+
+/* channel page - STILL IN WIP! */
+/* header container */
+
+yt-page-header-renderer {
+  margin-top: 3px !important;
+  margin-bottom: -22px !important;
+}
+
+ytd-browse[page-subtype="channels"] #page-header-banner, #page-header {
+  position: relative;
+  top: -12px !important;
+  margin: 0px -12px 0px -12px !important;
+  padding: 0px !important;
+}
+
+ytd-browse[page-subtype="channels"] #page-header-container {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 12px;
+  margin: 35px 7px 0px 20px !important;
+  transition: border-color 0.2s ease;
+}
+
+ytd-browse[page-subtype="channels"] #page-header-container::before {
+  content: '情報';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-browse[page-subtype="channels"] #page-header-container:hover {
+  border-color: var(--active);
+}
+
+ytd-browse[page-subtype="channels"] #page-header-container:hover::before {
+  color: var(--active);
+}
+
+/* banner */
+ytd-c4-tabbed-header-renderer #banner-container,
+ytd-c4-tabbed-header-renderer #banner {
+  width: 10% !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+/* header info section */
+ytd-c4-tabbed-header-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 12px;
+  margin: 35px 0px 0px 0px !important;
+  transition: border-color 0.2s ease;
+}
+
+ytd-c4-tabbed-header-renderer::before {
+  content: 'チャンネル';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-c4-tabbed-header-renderer:hover {
+  border-color: var(--active);
+}
+
+ytd-c4-tabbed-header-renderer:hover::before {
+  color: var(--active);
+}
+
+/* content tab and vids */
+ytd-browse[page-subtype="channels"] ytd-shelf-renderer ytd-grid-video-renderer {
+  margin-right: 8px !important;
+  margin-bottom: 16px !important;
+  flex: 0 1 auto !important;
+}
+
+ytd-browse[page-subtype="channels"] ytd-two-column-browse-results-renderer {
+  padding: 0px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0px -8px 0px 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+ytd-browse[page-subtype="channels"] #primary.ytd-two-column-browse-results-renderer {
+  width: 100% !important;
+  padding: 0 16px !important;
+  margin: 0px 0px 0px 0px !important;
+  box-sizing: border-box !important;
+}
+
+ytd-browse[page-subtype="channels"] ytd-section-list-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent;
+  padding: 12px;
+  width: 100% !important;
+  margin: 20px 0 0 0 !important; 
+  transition: border-color 0.2s ease;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+ytd-browse[page-subtype="channels"] ytd-section-list-renderer::before {
+  content: 'コンテンツ';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-browse[page-subtype="channels"] ytd-section-list-renderer:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-browse[page-subtype="channels"] ytd-section-list-renderer:hover::before {
+  color: var(--active) !important;
+}
+
+/* sidebar open close adjuster 6000 */
+ytd-app[guide-persistent-and-visible] ytd-browse[page-subtype="channels"] #page-header {
+  margin-left: 6px !important;
+}
+
+/* description bottom */
+div#description {
+  background: transparent !important;
+}
+
+ytd-watch-metadata #description {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 0 !important;
+  margin-bottom: -2px;
+  transition: border-color 0.2s ease;
+}
+
+ytd-watch-metadata #description::before {
+  content: '説明';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-watch-metadata #description:hover {
+  border-color: var(--active);
+}
+
+ytd-watch-metadata #description:hover::before {
+  color: var(--active);
+}
+    
+/* fix nested ass elements */
+#description-inline-expander,
+#info-strings {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* hide dublicaate stuff */
+#info::before,
+#info-container::after {
+  display: none !important;
+}
+
+/* comments */
+ytd-comments#comments {
+  position: relative;
+  border: var(--border) solid var(--inactive);
+  background: transparent;
+  padding: 0px 10px 10px 20px;
+  margin-top: -6px;
+  transition: border-color 0.2s ease;
+}
+
+ytd-comments#comments::before {
+  content: 'コメント';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-comments#comments:hover {
+  border-color: var(--active);
+}
+
+ytd-comments#comments:hover::before {
+  color: var(--active);
+}
+
+/* homepage fix */
+ytd-browse[page-subtype="home"] {
+  padding: 8px 2px 0px 20px !important;
+  overflow: hidden !important;
+}
+
+ytd-browse[page-subtype="home"] ytd-rich-grid-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent;
+  margin: 0px 6px 0px 6px !important;
+  transition: border-color 0.2s ease;
+  height: calc(100vh - 99px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+  contain: none !important;
+}
+
+ytd-browse[page-subtype="home"] #contents.ytd-rich-grid-renderer {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: 100% !important;
+  padding-top: 30px !important;
+  padding-left: 46px !important;
+  padding-right: 12px !important;
+}
+
+ytd-browse[page-subtype="home"] ytd-rich-grid-renderer::before {
+  content: 'フィード';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 2000;
+}
+
+ytd-browse[page-subtype="home"] ytd-rich-grid-renderer:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-browse[page-subtype="home"] ytd-rich-grid-renderer:hover::before {
+  color: var(--active) !important;
+}
+
+ytd-video-preview,
+#inline-preview-player,
+#hover-overlay,
+.ytd-video-masthead-ad-v3-renderer #preview,
+ytd-explainer-sidebar-renderer {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+ytd-rich-item-renderer:hover #moving-thumbnail,
+ytd-grid-video-renderer:hover #moving-thumbnail {
+  display: none !important;
+}
+    
+/* search topic type shi */
+ytd-search {
+  padding: 8px 16px 0px 16px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+ytd-app[view-id="search"] #page-manager,
+ytd-search #container.ytd-search,
+ytd-search #primary.ytd-search,
+ytd-search #center-col {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+ytd-search-header-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent;
+  padding: 3px 10px 0px 10px;
+  margin: 0px 6px 20px 6px !important;
+  transition: border-color 0.2s ease;
+  width: auto !important;
+}
+
+ytd-search-header-renderer::before {
+  content: 'カテゴリー';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+ytd-search-header-renderer:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-search-header-renderer:hover::before {
+  color: var(--active) !important;
+}
+
+ytd-search ytd-item-section-renderer {
+  position: relative;
+  border: var(--border) solid var(--inactive) !important;
+  background: transparent;
+  margin: 0px 6px 0px 6px !important;
+  transition: border-color 0.2s ease;
+  height: calc(100vh - 170px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+  width: auto !important;
+}
+
+ytd-search ytd-item-section-renderer #contents {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: 100% !important;
+  padding: 24px 16px 16px 16px !important;
+}
+
+ytd-search ytd-item-section-renderer::before {
+  content: '結果';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  background: var(--bg-dark);
+  padding: 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--inactive);
+  transition: color 0.2s ease;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+ytd-search ytd-item-section-renderer:hover {
+  border-color: var(--active) !important;
+}
+
+ytd-search ytd-item-section-renderer:hover::before {
+  color: var(--active) !important;
+}
+
+ytd-search ytd-video-renderer,
+ytd-search ytd-video-renderer #dismissible {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+ytd-search ytd-video-renderer .text-wrapper {
+  flex: 1 !important;
+  width: 100% !important;
+}
+
+/* text colors */
+yt-formatted-string,
+#video-title,
+#text,
+h1, h2, h3 {
+  color: var(--text) !important;
+}
+
+#metadata-line,
+#info-strings,
+yt-formatted-string.ytd-video-meta-block {
+  color: var(--text-dim) !important;
+}
+
+}

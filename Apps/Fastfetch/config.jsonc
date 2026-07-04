@@ -1,0 +1,71 @@
+// Inspired by Catnap
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "color": {
+            "1": "green",
+            "2": "green",
+            "3": "green",
+            "4": "green"
+        },
+        "padding": {
+          "top": 1
+        }
+    },
+    "display": {
+        "separator": "",
+        "key": {
+            "width": 8
+        }
+    },
+    "modules": [
+        {
+            "type": "break"
+        },
+        {
+            // draw borders first to make colors of left and right border consistant
+            "key": "usr",
+            "type": "title",
+            "format": "{user-name}",
+            "keyColor": "31"
+        },
+        {
+            "key": "hnm",
+            "type": "title",
+            "format": "{host-name}",
+            "keyColor": "32"
+
+        },
+        {
+            "key": "osv",
+            "type": "os",
+            "keyColor": "34"
+        },
+        {
+            "key": "trm",
+            "type": "shell",
+            "keyColor": "35"
+        },
+        {
+            "key": "cpu",
+            "type": "cpu",
+            "showPeCoreCount": true,
+            "keyColor": "36"
+        },
+        {
+            "key": "ssd",
+            "type": "disk",
+            "folders": "/",
+            "keyColor": "31"
+        },
+        {
+            "key": "mem",
+            "type": "memory",
+            "keyColor": "32"
+        },
+        {
+            "type": "break"
+        }
+    ]
+}

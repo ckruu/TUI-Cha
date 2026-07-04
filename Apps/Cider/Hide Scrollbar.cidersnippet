@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cider-css-snippet>
+    <name>Hide Scollbars</name>
+    <description></description>
+    <css><![CDATA[* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}]]></css>
+    <createdBy>User</createdBy>
+    <version>1.0</version>
+</cider-css-snippet>

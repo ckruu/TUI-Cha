@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cider-css-snippet>
+    <name>Unround Everything</name>
+    <description></description>
+    <css><![CDATA[/* 
+Targeting common layout elements instead of (*) 
+This covers 99% of UI without the massive performance hit
+*/
+div, button, a, img, span, input, section, nav, header, footer, 
+::before, ::after {
+    border-radius: 0 !important;
+}
+
+/* 
+Targeting Cider/Electron specific containers 
+Cider often uses CSS variables for rounding; killing them at the root is very efficient
+*/
+:root {
+    --radius-full: 0 !important;
+    --border-radius: 0 !important;
+    --apple-radius: 0 !important;
+    --card-radius: 0 !important;
+}
+
+/* Specific SVG rect unrounding */
+svg rect, 
+svg circle, 
+svg ellipse {
+    rx: 0 !important;
+    ry: 0 !important;
+    r: 0 !important;
+}
+
+/* Handle Checkboxes and Radios specifically without the heavy :not chain */
+input[type="checkbox"], 
+input[type="radio"] {
+    appearance: none;
+    border-radius: 0 !important;
+}
+
+/* 
+Facebook & Specific Domain fixes 
+Kept minimal to avoid lag on those specific sites
+*/
+:root#facebook svg[role] > mask[id]:first-child + g[mask]:last-child {
+    mask: none !important;
+}
+
+@-moz-document domain("twitter.com"), domain("x.com") {
+    [style*='clip-path: url("#circle-hw-shapeclip-clipconfig")'] {
+        clip-path: none !important;
+    }
+}
+
+@-moz-document domain("web.whatsapp.com") {
+    svg:has(path.background) path.background {
+        display: none !important;
+    }
+}
+
+/* Microsoft Copilot Squircles */
+@-moz-document domain("copilot.microsoft.com") {
+    [class*="squircle"],
+    [style^="clip-path: var(--clip-path-squircle"] {
+        clip-path: none !important;
+    }
+}]]></css>
+    <createdBy>User</createdBy>
+    <version>1.0</version>
+</cider-css-snippet>
